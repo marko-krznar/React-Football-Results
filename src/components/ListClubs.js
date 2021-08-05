@@ -13,7 +13,7 @@ export default class ListClubs extends Component {
         fetch(`https://apiv2.apifootball.com/?action=get_countries&APIkey=5f990ce48ebc7388ba775b57240a09e34a74f3ac19ce1d51ee35839a1e2ce4e2`)
         .then(response => response.json())
         .then(response => this.setState({
-            ligues: [ response ]
+            ligues: response
         }))
     }
     
@@ -22,11 +22,8 @@ export default class ListClubs extends Component {
             <div>
                 <p>Lista natjecanja prema državi</p>
                 <ul>
-                    {/* {this.state.clubs.map((ligue, index) => (
-                        <li key={index}>Ligue: {ligue.country_name}</li>
-                    ))} */}
                     {this.state.ligues.map((ligue, index) => (
-                        <li key={index}>Ligue: {ligue[0].country_name} Ligue2: {ligue[1].country_name}</li>
+                        <li key={index}>Ligue: {ligue.country_name}</li>
                     ))}
                 </ul>
             </div>
