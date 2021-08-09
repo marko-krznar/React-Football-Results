@@ -18,15 +18,22 @@ export default class ListClubs extends Component {
     }
     
     render() {
+        console.log(this.state.ligues);
         return (
-            <div>
-                <p>Lista natjecanja prema državi</p>
-                <ul>
-                    {this.state.ligues.map((ligue, index) => (
-                        <li key={index}>Ligue: {ligue.country_name}</li>
-                    ))}
-                </ul>
-            </div>
+            <section className="section">
+                <div className="inner-sec bcg-image">
+                    <div className="sec-ligues d-flex">
+                        <h2 className="text-uppercase w-100 text-center">Ligues</h2>
+                        <ul className="w-100 d-flex">
+                            {this.state.ligues.map((ligue, index) => (
+                                <li className="text-center d-flex position-relative" key={index}>
+                                    <div className="img-frame"><img src={ligue.country_logo} alt={ligue.country_name}/></div>
+                                    <p className="w-100">{ligue.country_name}</p></li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </section>
         )
     }
 }
