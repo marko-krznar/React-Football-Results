@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ListClubs from "./components/ListClubs";
+import ListLeagues from "./components/ListLeagues/ListLeagues";
 import Header from "./containers/Header/Header";
 import "./style.scss";
 
@@ -8,7 +8,7 @@ export default class App extends Component {
     return (
       <div>
         <Header />
-        <ListClubs />
+        <ListLeagues />
       </div>
     );
   }
