@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GETapi } from "../../Api";
 import ListTeams from "../ListTeams/ListTeams";
+import Standings from "../Standings/Standings";
 
 export default function Header() {
-  const [leaguesList, setLeaguesList] = useState([]);
+  const [leaguesList, setLeaguesList] = useState([null]);
   const params = useParams();
+
+  console.log(leaguesList[0]?.league_id);
 
   useEffect(() => {
     GETapi(
@@ -16,13 +19,14 @@ export default function Header() {
   return (
     <div className="Test">
       <p>Leagues</p>
-      {leaguesList.map((league) => (
-        <p key={league.league_id}>
-          <img src={league.league_logo} alt={league.league_name} />
-          {league.league_name}
+      {leaguesList.map((league, index) => (
+        <p key={index}>
+          <img src={league?.league_logo} alt={league?.league_name} />
+          {league?.league_name}
         </p>
       ))}
-      <ListTeams league={leaguesList[0].league_id} />
+      <ListTeams league={leaguesList[0]?.league_id} />
+      <Standings league={leaguesList[0]?.league_id} />
     </div>
   );
 }
