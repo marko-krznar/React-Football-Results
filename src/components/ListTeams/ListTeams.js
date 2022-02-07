@@ -11,16 +11,14 @@ export default function ListTeams({ league }) {
     ).then((res) => setTeamsList(res));
   }, [league]);
 
-  console.log(teamsList);
-
   return (
     <div>
       <h2>Teams</h2>
       <ol>
-        {teamsList.map((team) => (
-          <li key={team.team_key}>
-            <img src={team.team_badge} alt={team.team_name} />
-            {team.team_name}
+        {teamsList.map((team, index) => (
+          <li key={index}>
+            <img src={team?.team_badge} alt={team?.team_name} />
+            {team?.team_name}
           </li>
         ))}
       </ol>
