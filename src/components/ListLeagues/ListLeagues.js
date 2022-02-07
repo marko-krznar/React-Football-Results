@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { GETapi } from "../../Api";
+import ListTeams from "../ListTeams/ListTeams";
 
 export default function Header() {
   const [leaguesList, setLeaguesList] = useState([]);
@@ -21,6 +22,7 @@ export default function Header() {
           {league.league_name}
         </p>
       ))}
+      <ListTeams league={leaguesList[0].league_id} />
     </div>
   );
 }
