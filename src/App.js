@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Route, Routes } from "react-router-dom";
-// import ListLeagues from "./components/ListLeagues/ListLeagues";
-// import Header from "./containers/Header/Header";
+import Fixtures from "./components/Fixtures/Fixtures";
+import ListTeams from "./components/ListTeams/ListTeams";
+import Standings from "./components/Standings/Standings";
+import Header from "./containers/Header/Header";
 import Homepage from "./containers/Homepage/Homepage";
 import "./style.scss";
 
@@ -9,10 +11,20 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        {/* <Header /> */}
+        <Homepage />
+        <Header />
         <Routes>
-          {/* <Route path=":id" element={<ListLeagues />} /> */}
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Fixtures />} />
+          <Route path="/teams" element={<ListTeams />} />
+          <Route path="/standings" element={<Standings />} />
+          <Route
+            path="*"
+            element={
+              <main>
+                <p>There's nothing here!</p>
+              </main>
+            }
+          />
         </Routes>
       </div>
     );
