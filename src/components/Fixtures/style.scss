@@ -1,0 +1,21 @@
+.block--match {
+  background: #eee;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  > p {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  > div {
+    > div {
+      padding: 0 1rem;
+      &:nth-child(2),
+      &:nth-child(3) {
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
