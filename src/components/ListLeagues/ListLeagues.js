@@ -8,8 +8,6 @@ export default function Header() {
   const [leaguesList, setLeaguesList] = useState([null]);
   const params = useParams();
 
-  console.log(leaguesList[0]?.league_id);
-
   useEffect(() => {
     GETapi(
       `https://apiv3.apifootball.com/?action=get_leagues&country_id=${params.id}&APIkey=5f990ce48ebc7388ba775b57240a09e34a74f3ac19ce1d51ee35839a1e2ce4e2`
