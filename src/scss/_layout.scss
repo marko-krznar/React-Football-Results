@@ -1,0 +1,32 @@
+$alignments: (
+  between: space-between,
+  end: flex-end,
+  start: flex-start,
+  center: center,
+  around: space-around,
+  evenly: space-evenly,
+);
+
+.wrapper {
+  max-width: 1080px;
+  margin: auto;
+  width: 95%;
+}
+.d-flex {
+  display: flex;
+}
+.direction-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+@each $key, $value in $alignments {
+  .justify-content-#{$key} {
+    justify-content: $value;
+  }
+  .align-items-#{$key} {
+    align-items: $value;
+  }
+}
