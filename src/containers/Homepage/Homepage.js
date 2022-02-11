@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { GETapi } from "../../Api";
+import "./style.scss";
 
 export default function Homepage() {
   const [leagueName, setLeagueName] = useState([null]);
@@ -12,10 +13,23 @@ export default function Homepage() {
 
   return (
     <div className="page page--homepage">
-      <h2>This App shows football results</h2>
-      <img src={leagueName[1]?.league_logo} alt={leagueName[1]?.league_name} />
-      <h2>League: {leagueName[1]?.league_name}</h2>
-      <p>Season {leagueName[1]?.league_season}</p>
+      <div className="block--subheader">
+        <h2>Welcome to Football Results</h2>
+        <p>
+          This app shows football results, fixtures, teams and standing. Main
+          purpose of this app is ReactJS and API exercises.
+        </p>
+      </div>
+      <div className="block--league-info d-flex justify-content-center align-items-center">
+        <img
+          src={leagueName[1]?.league_logo}
+          alt={leagueName[1]?.league_name}
+        />
+        <div className="block--info">
+          <h2>{leagueName[1]?.league_name}</h2>
+          <p>Season {leagueName[1]?.league_season}</p>
+        </div>
+      </div>
     </div>
   );
 }
