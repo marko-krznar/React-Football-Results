@@ -7,11 +7,6 @@ $alignments: (
   evenly: space-evenly,
 );
 
-.wrapper {
-  max-width: 1080px;
-  margin: auto;
-  width: 95%;
-}
 .d-flex {
   display: flex;
 }
@@ -20,6 +15,10 @@ $alignments: (
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+html * {
+  box-sizing: border-box;
 }
 
 @each $key, $value in $alignments {
