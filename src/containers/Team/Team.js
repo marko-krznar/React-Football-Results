@@ -17,7 +17,7 @@ export default function Team() {
   }, [params.teamKey]);
 
   return (
-    <div>
+    <div className="block--team-info">
       <img src={team[0]?.team_badge} alt={team[0]?.team_name} />
       <h2>{team[0]?.team_name}</h2>
       <p>Coach: {team[0]?.coaches[0]?.coach_name || noData}</p>
