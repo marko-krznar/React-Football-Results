@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { GETapi } from "../../Api";
 import "./style.scss";
 
@@ -13,16 +14,24 @@ export default function ListTeams({ league }) {
   }, [leagueGana]);
 
   return (
-    <div>
+    <section className="sec--teams">
       <h2>Teams</h2>
-      <ol>
+      <p>
+        Look all the teams in the league, click on team to see more info about
+        it
+      </p>
+      <ol className="d-flex flex-wrap">
         {teamsList.map((team, index) => (
-          <li key={index}>
+          <li
+            className="d-flex direction-column"
+            key={index}
+            to={team?.team_name}
+          >
             <img src={team?.team_badge} alt={team?.team_name} />
-            {team?.team_name}
+            <span>{team?.team_name}</span>
           </li>
         ))}
       </ol>
-    </div>
+    </section>
   );
 }
