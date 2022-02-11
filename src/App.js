@@ -5,6 +5,7 @@ import ListTeams from "./components/ListTeams/ListTeams";
 import Standings from "./components/Standings/Standings";
 import Header from "./containers/Header/Header";
 import Homepage from "./containers/Homepage/Homepage";
+import Team from "./containers/Team/Team";
 import "./style.scss";
 
 export default class App extends Component {
@@ -17,6 +18,7 @@ export default class App extends Component {
           <Route path="/" element={<Fixtures />} />
           <Route path="/teams" element={<ListTeams />} />
           <Route path="/standings" element={<Standings />} />
+          <Route path="/team/:teamKey" element={<Team />} />
           <Route
             path="*"
             element={
