@@ -22,13 +22,10 @@ export default function ListTeams({ league }) {
       </p>
       <ol className="d-flex flex-wrap">
         {teamsList.map((team, index) => (
-          <li
-            className="d-flex direction-column"
-            key={index}
-            to={team?.team_name}
-          >
+          <li className="d-flex direction-column" key={index}>
             <img src={team?.team_badge} alt={team?.team_name} />
             <span>{team?.team_name}</span>
+            <Link to={`/team/${team?.team_key}`}>See more</Link>
           </li>
         ))}
       </ol>
