@@ -18,4 +18,18 @@
       }
     }
   }
+  * {
+    color: #212121;
+  }
+}
+.sec--fixtures {
+  > div {
+    flex: 1 1 50%;
+    &:first-child {
+      padding-right: 1rem;
+    }
+    &:last-child {
+      padding-left: 1rem;
+    }
+  }
 }
