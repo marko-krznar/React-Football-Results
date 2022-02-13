@@ -6,7 +6,7 @@ import { GETapi } from "../../Api";
 export default function Team() {
   const [team, setTeam] = useState({});
   const params = useParams();
-  const noData = "No available data";
+  const noData = "-";
 
   console.log(team[0]?.players);
 
@@ -24,8 +24,8 @@ export default function Team() {
       <table>
         <thead>
           <tr>
-            <th>Number</th>
             <th>Player</th>
+            <th>Number</th>
             <th>Age</th>
             <th>Games</th>
             <th>Goals</th>
@@ -36,8 +36,8 @@ export default function Team() {
         <tbody>
           {team[0]?.players.map((player, index) => (
             <tr key={index}>
-              <td>{player?.player_number || noData}</td>
               <td>{player?.player_name || noData}</td>
+              <td>{player?.player_number || noData}</td>
               <td>{player?.player_age || noData}</td>
               <td>{player?.player_match_played || noData}</td>
               <td>{player?.player_goals || noData}</td>
