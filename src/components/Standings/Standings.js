@@ -13,7 +13,7 @@ export default function Standings({ league }) {
   }, [leagueGana]);
 
   return (
-    <div>
+    <section className="sec--standings">
       <h2>Standings</h2>
       <table>
         <thead>
@@ -43,6 +43,6 @@ export default function Standings({ league }) {
           ))}
         </tbody>
       </table>
-    </div>
+    </section>
   );
 }
