@@ -25,7 +25,9 @@ export default function ListTeams({ league }) {
           <li className="d-flex direction-column" key={index}>
             <img src={team?.team_badge} alt={team?.team_name} />
             <span>{team?.team_name}</span>
-            <Link to={`/team/${team?.team_key}`}>See more</Link>
+            <Link className="btn btn--primary" to={`/team/${team?.team_key}`}>
+              See more
+            </Link>
           </li>
         ))}
       </ol>

@@ -12,8 +12,6 @@ export default function Standings({ league }) {
     ).then((res) => setStandings(res));
   }, [leagueGana]);
 
-  console.log(standings);
-
   return (
     <div>
       <h2>Standings</h2>

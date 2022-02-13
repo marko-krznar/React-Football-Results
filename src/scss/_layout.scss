@@ -37,3 +37,19 @@ body {
 .block--headline {
   margin-bottom: 2rem;
 }
+table {
+  thead {
+    background: #424242;
+  }
+  th,
+  td {
+    padding: 0.5em 1em;
+    text-align: left;
+  }
+  tr {
+    border-bottom: 1px solid #424242;
+    &:nth-child(2n) {
+      background: rgba(66, 66, 66, 0.2);
+    }
+  }
+}
