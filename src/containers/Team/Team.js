@@ -8,8 +8,6 @@ export default function Team() {
   const params = useParams();
   const noData = "-";
 
-  console.log(team[0]?.players);
-
   useEffect(() => {
     GETapi(
       `https://apiv3.apifootball.com/?action=get_teams&team_id=${params.teamKey}&APIkey=5f990ce48ebc7388ba775b57240a09e34a74f3ac19ce1d51ee35839a1e2ce4e2`
