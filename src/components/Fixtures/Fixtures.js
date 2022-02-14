@@ -29,7 +29,8 @@ export default function Fixtures() {
         <div className="block--headline">
           <h2>Results</h2>
           <p>
-            {pastDate} - {yesterday}
+            {format(new Date(pastDate), "do MMM yyyy")} -{" "}
+            {format(new Date(yesterday), "do MMM yyyy")}
           </p>
         </div>
 
@@ -59,7 +60,8 @@ export default function Fixtures() {
         <div className="block--headline">
           <h2>Fixtures</h2>
           <p>
-            {startDate} - {endDate}
+            {format(new Date(startDate), "do MMM yyyy")} -{" "}
+            {format(new Date(endDate), "do MMM yyyy")}
           </p>
         </div>
         {fixtures.map((fixture, index) => (
