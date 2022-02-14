@@ -15,34 +15,36 @@ export default function Standings({ league }) {
   return (
     <section className="sec--standings">
       <h2>Standings</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Team</th>
-            <th>Played games</th>
-            <th>Win</th>
-            <th>Draw</th>
-            <th>Loses</th>
-            <th>Goals</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody>
-          {standings.map((team, index) => (
-            <tr key={index}>
-              <td>{team?.team_name}</td>
-              <td>{team?.overall_league_payed}</td>
-              <td>{team?.overall_league_W}</td>
-              <td>{team?.overall_league_D}</td>
-              <td>{team?.overall_league_L}</td>
-              <td>
-                {team?.overall_league_GF}:{team?.overall_league_GA}
-              </td>
-              <td>{team?.overall_league_PTS}</td>
+      <div className="block--table">
+        <table>
+          <thead>
+            <tr>
+              <th>Team</th>
+              <th>Played games</th>
+              <th>Win</th>
+              <th>Draw</th>
+              <th>Loses</th>
+              <th>Goals</th>
+              <th>Points</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {standings.map((team, index) => (
+              <tr key={index}>
+                <td>{team?.team_name}</td>
+                <td>{team?.overall_league_payed}</td>
+                <td>{team?.overall_league_W}</td>
+                <td>{team?.overall_league_D}</td>
+                <td>{team?.overall_league_L}</td>
+                <td>
+                  {team?.overall_league_GF}:{team?.overall_league_GA}
+                </td>
+                <td>{team?.overall_league_PTS}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
   );
 }
