@@ -53,3 +53,8 @@ table {
     }
   }
 }
+@media (max-width: 768px) {
+  .block--table {
+    overflow-x: scroll;
+  }
+}

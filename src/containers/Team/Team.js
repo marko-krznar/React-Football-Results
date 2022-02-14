@@ -19,32 +19,34 @@ export default function Team() {
       <img src={team[0]?.team_badge} alt={team[0]?.team_name} />
       <h2>{team[0]?.team_name}</h2>
       <p>Coach: {team[0]?.coaches[0]?.coach_name || noData}</p>
-      <table>
-        <thead>
-          <tr>
-            <th>Player</th>
-            <th>Number</th>
-            <th>Age</th>
-            <th>Games</th>
-            <th>Goals</th>
-            <th>Yellow card</th>
-            <th>Red card</th>
-          </tr>
-        </thead>
-        <tbody>
-          {team[0]?.players.map((player, index) => (
-            <tr key={index}>
-              <td>{player?.player_name || noData}</td>
-              <td>{player?.player_number || noData}</td>
-              <td>{player?.player_age || noData}</td>
-              <td>{player?.player_match_played || noData}</td>
-              <td>{player?.player_goals || noData}</td>
-              <td>{player?.player_yellow_cards || noData}</td>
-              <td>{player?.player_red_cards || noData}</td>
+      <div className="block--table">
+        <table>
+          <thead>
+            <tr>
+              <th>Player</th>
+              <th>Number</th>
+              <th>Age</th>
+              <th>Games</th>
+              <th>Goals</th>
+              <th>Yellow card</th>
+              <th>Red card</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {team[0]?.players.map((player, index) => (
+              <tr key={index}>
+                <td>{player?.player_name || noData}</td>
+                <td>{player?.player_number || noData}</td>
+                <td>{player?.player_age || noData}</td>
+                <td>{player?.player_match_played || noData}</td>
+                <td>{player?.player_goals || noData}</td>
+                <td>{player?.player_yellow_cards || noData}</td>
+                <td>{player?.player_red_cards || noData}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
